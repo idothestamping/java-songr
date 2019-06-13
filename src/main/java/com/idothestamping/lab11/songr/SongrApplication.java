@@ -9,7 +9,7 @@ public class SongrApplication {
 	public static void main(String[] args) {
 
 		SpringApplication.run(SongrApplication.class, args);
-		System.out.println("http://localhost:8080/hello");
+		System.out.println("http://localhost:8080/album");
 	}
 
 }
