@@ -8,12 +8,47 @@
     <div style="display: flex">
         <div style="flex: 30%; margin: 50px">
             <h2>Display Albums</h2>
-            <ul th:each="albums : ${allAlbums}" style="border: 2px solid purple; border-radius: 5px; padding: 20px">
-                <li th:text="${albums.title}" style="margin: 0 10px"></li>
-                <li th:text="${albums.artist}" style="margin: 0 10px"></li>
-                <li th:text="${albums.songCount}" style="margin: 0 10px"></li>
-                <li th:text="${albums.length}" style="margin: 0 10px"></li>
-                <img th:src="${albums.imageUrl}" alt="cats" height="150" style="margin: 10px">
+            <ul th:each="albums : ${allAlbums}" style="border: 2px solid purple; border-radius: 5px; padding: 20px 0px; list-style: none">
+                <ul style="list-style: none">
+                    <li>
+                        Title:
+                        <ul>
+                            <li th:text="${albums.title}"></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul style="list-style: none">
+                    <li>
+                        Artist:
+                        <ul>
+                            <li th:text="${albums.artist}"></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul style="list-style: none">
+                    <li>
+                        Song Count:
+                        <ul>
+                            <li th:text="${albums.songCount}"></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul style="list-style: none">
+                    <li>
+                        Length:
+                        <ul>
+                            <li th:text="${albums.length}"></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul style="list-style: none">
+                    <li>
+                        Album Art:
+                        <ul>
+                            <img th:src="${albums.imageUrl}" alt="cats" height="150">
+                        </ul>
+                    </li>
+                </ul>
             </ul>
         </div>
 
