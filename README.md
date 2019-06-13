@@ -14,10 +14,10 @@
 Use the [Spring Initializr](https://start.spring.io/) to create a new application with artifact songr with Web (and optionally Devtools) dependency. Download the zip file and extract the directory it contains. 
 
 ## Solution
-* [App Code](https://github.com/idothestamping/java-songr/src/main/java/com.idothestamping.lab11.songr/SongApplication.java)
+* [App Code](https://github.com/idothestamping/java-songr/src/main/java/com/idothestamping/lab11/songr/Album.java)
 * [Songr Controller Code](https://github.com/idothestamping/java-songr/src/main/java/com/idothestamping/lab11/songr/SongrController/SongrController.java)
-* [Test Code](https://github.com/idothestamping/java-songr/src/test/java/com/idothestamping/lab11/songr/SongrController/SongrControllerTest.java)
+* [Test Code](https://github.com/idothestamping/java-songr/src/test/java/com/idothestamping/lab11/songr/SongrApplicationTests.java)
 
-* [Album Code](https://github.com/idothestamping/java-songr/src/main/java/com.idothestamping.lab11/songr/Album.java)
-* [Album Controller Code](https://github.com/idothestamping/java-songr/src/main/java/com.idothestamping.lab11.lab11/SongrController/AlbumController.java)
+* [Album Code](https://github.com/idothestamping/java-songr/blob/master/src/main/java/com/idothestamping/lab11/songr/Album.java)
+* [Album Controller Code](https://github.com/idothestamping/java-songr/blob/master/src/main/java/com/idothestamping/lab11/songr/SongrController/AlbumController.java)
 
