@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import com.idothestamping.lab11.songr.Album;
 import com.idothestamping.lab11.songr.AlbumRepo;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
 public class AlbumController {
@@ -21,7 +23,6 @@ public class AlbumController {
         return "index";
     }
 
-
     // Testing Json:
 //    @GetMapping("/album")
 //    public @ResponseBody Iterable<Album> getAllalbum() {
@@ -34,5 +35,13 @@ public class AlbumController {
         Iterable<Album> albums = AlbumRepo.findAll();
         m.addAttribute("allAlbums", albums);
         return "index";
+    }
+
+    @PostMapping("/album")
+    public RedirectView addAlbum(String title, String artist, Long songCount, Long length, String imageUrl) {
+        Album userInput = new Album(title, artist, songCount, length, imageUrl);
+        AlbumRepo.save(userInput);
+//        return new RedirectView "index";
+        return new RedirectView("/album");
     }
 }
