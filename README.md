@@ -18,5 +18,6 @@ Use the [Spring Initializr](https://start.spring.io/) to create a new applicatio
 * [Songr Controller Code](https://github.com/idothestamping/java-songr/src/main/java/com/idothestamping/lab11/songr/SongrController/SongrController.java)
 * [Test Code](https://github.com/idothestamping/java-songr/src/test/java/com/idothestamping/lab11/songr/SongrController/SongrControllerTest.java)
 
-* [Album Code](https://github.com/idothestamping/java-songr/src/main/java/com.idothestamping.lab11.songr/SongApplication.java)
-* [Album Controller Code](https://github.com/idothestamping/java-songr/src/main/java/com.idothestamping.lab11.songr/SongrController/AlbumController.java)
+* [Album Code](https://github.com/idothestamping/java-songr/src/main/java/com.idothestamping.lab11/songr/Album.java)
+* [Album Controller Code](https://github.com/idothestamping/java-songr/src/main/java/com.idothestamping.lab11.lab11/SongrController/AlbumController.java)
+
