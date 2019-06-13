@@ -4,35 +4,32 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Title</title>
 </head>
-<body>
-<div style="display: flex;">
-    <div style="flex: 50%;">
- <h2>Display Albums</h2>
-    <ul th:each="albums : ${allAlbums}">
-        <li th:text="${albums.title}"></li>
-        <li th:text="${albums.artist}"></li>
-        <li th:text="${albums.songCount}"></li>
-        <li th:text="${albums.length}"></li>
-        <img th:src="${albums.imageUrl}" alt="cats" height="150">
-    </ul>
-    </div>
+<body style="font-family: Arial, Helvetica, sans-serif; background:radial-gradient(#c187ff, #fff) fixed">
+    <div style="display: flex">
+        <div style="flex: 30%; margin: 50px">
+            <h2>Display Albums</h2>
+            <ul th:each="albums : ${allAlbums}" style="border: 2px solid purple; border-radius: 5px; padding: 20px">
+                <li th:text="${albums.title}" style="margin: 0 10px"></li>
+                <li th:text="${albums.artist}" style="margin: 0 10px"></li>
+                <li th:text="${albums.songCount}" style="margin: 0 10px"></li>
+                <li th:text="${albums.length}" style="margin: 0 10px"></li>
+                <img th:src="${albums.imageUrl}" alt="cats" height="150" style="margin: 10px">
+            </ul>
+        </div>
 
-    <div style="flex: 50%;">
-     <h1>Input new albums</h1>
-     <form method="POST" action="/album">
-         Title:<br>
-         <input type="text" name="title"><br>
-         Artist:<br>
-         <input type="text" name="artist"><br>
-         SongCount:<br>
-         <input type="text" name="songCount"><br>
-         Length:<br>
-         <input type="text" name="length"><br>
-         ImageUrl:<br>
-         <input type="text" name="imageUrl"><br>
-         <input type="submit">
-     </form>
+            <div style="flex: 20%; margin: 50px"></div>
+
+        <div style="flex: 50%; margin: 50px">
+            <h1>Input new albums</h1>
+            <form method="POST" action="/album" style="border: 2px solid black; border-radius: 5px; padding: 20px">Title:<br>
+                <input type="text" name="title" style="margin: 10px"><br>Artist:<br>
+                <input type="text" name="artist" style="margin: 10px"><br>SongCount:<br>
+                <input type="text" name="songCount" style="margin: 10px"><br>Length:<br>
+                <input type="text" name="length" style="margin: 10px"><br>ImageUrl:<br>
+                <input type="text" name="imageUrl" style="margin: 10px"><br>
+                <input type="submit">
+            </form>
+        </div>
     </div>
-</div>
 </body>
 </html>

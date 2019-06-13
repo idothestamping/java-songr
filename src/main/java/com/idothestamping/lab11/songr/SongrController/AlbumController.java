@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import com.idothestamping.lab11.songr.Album;
 import com.idothestamping.lab11.songr.AlbumRepo;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
@@ -23,7 +22,7 @@ public class AlbumController {
         return "index";
     }
 
-    // Testing Json:
+    // Sample Testing Json:
 //    @GetMapping("/album")
 //    public @ResponseBody Iterable<Album> getAllalbum() {
 //        // This returns a JSON or XML with the users
@@ -41,7 +40,6 @@ public class AlbumController {
     public RedirectView addAlbum(String title, String artist, Long songCount, Long length, String imageUrl) {
         Album userInput = new Album(title, artist, songCount, length, imageUrl);
         AlbumRepo.save(userInput);
-//        return new RedirectView "index";
         return new RedirectView("/album");
     }
 }
