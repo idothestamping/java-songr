@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Title</title>
+</head>
+<body style="font-family: Arial, Helvetica, sans-serif; background:radial-gradient(#c187ff, #fff) fixed">
+<div style="display: flex">
+    <div style="flex: 50%; margin: 50px">
+        <a href="javascript:history.back()">Go Back</a>
+        <h2>List of Songs</h2>
+        <ul th:each="songs : ${allSongs}" style="border: 2px solid purple; border-radius: 5px; padding: 20px 0px; list-style: none">
+            <ul style="list-style: none">
+                <li>
+                    Song Title:
+                    <ul>
+                        <li th:text="${songs.title}"></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul style="list-style: none">
+                <li>
+                    Length:
+                    <ul>
+                        <li th:text="${songs.length}"></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul style="list-style: none">
+                <li>
+                    Track Number:
+                    <ul>
+                        <li th:text="${songs.trackNumber}"></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul style="list-style: none">
+                <li>
+                    Album:
+                    <ul>
+                        <li th:text="${songs.album.title}"></li>
+                    </ul>
+                </li>
+            </ul>
+            <br>
+        </ul>
+    </div>
+
+    <div style="flex: 50%; margin: 50px">
+        <h1>Add additional Songs to Album</h1>
+        <form method="POST" action="/" style="border: 2px solid black; border-radius: 5px; padding: 20px">Song Title:<br>
+            <input type="text" name="title" style="margin: 10px"><br>Length:<br>
+            <input type="text" name="length" style="margin: 10px"><br>Track Number:<br>
+            <input type="text" name="trackNumber" style="margin: 10px"><br>Album:<br>
+            <input type="text" name="fromAlbum" style="margin: 10px">
+            <input type="submit">
+        </form>
+    </div>
+
+    </div>
+</div>
+</body>
+</html>
+
+<!--th:action="@{'/song/' + ${songs.album_id}}"-->

@@ -6,59 +6,39 @@
 </head>
 <body style="font-family: Arial, Helvetica, sans-serif; background:radial-gradient(#c187ff, #fff) fixed">
     <div style="display: flex">
-        <div style="flex: 30%; margin: 50px">
+        <div style="flex: 35%; margin: 50px">
             <h2>Display Albums</h2>
-            <ul th:each="albums : ${allAlbums}" style="border: 2px solid purple; border-radius: 5px; padding: 20px 0px; list-style: none">
+            <a href="/song">See all Songs in DB</a>
+            <ul th:each="albums : ${allAlbums}" style="border: 2px solid purple; border-radius: 5px; padding: 20px 0px 0px 0px; list-style: none">
                 <ul style="list-style: none">
-                    <li>
-                        Title:
-                        <ul>
-                            <li th:text="${albums.title}"></li>
-                        </ul>
+                    <li th:each="albums: ${albums}">
+                        <img th:src="${albums.imageUrl}"  height="200px" width="200px"/><br>
+                        Album title:  <span  th:text="${albums.title}"></span><br>
+                        Artist:  <span th:text="${albums.artist}"></span><br>
+                        Number of Tracks: <span th:text="${albums.songCount}"></span><br>
+                        Total Length:  <span th:text="${albums.length}"></span> seconds<br>
+                        <a th:href="@{'/album/'+ ${albums.id}}">View Tracks</a>
                     </li>
                 </ul>
-                <ul style="list-style: none">
-                    <li>
-                        Artist:
-                        <ul>
-                            <li th:text="${albums.artist}"></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul style="list-style: none">
-                    <li>
-                        Song Count:
-                        <ul>
-                            <li th:text="${albums.songCount}"></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul style="list-style: none">
-                    <li>
-                        Length:
-                        <ul>
-                            <li th:text="${albums.length}"></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul style="list-style: none">
-                    <li>
-                        Album Art:
-                        <ul>
-                            <img th:src="${albums.imageUrl}" alt="cats" height="150">
-                        </ul>
-                    </li>
-                </ul>
+                <div style="border: 1px dotted purple; border-radius: 6px">
+                    <h3><a th:href="@{'/albums/' + ${albums.id}}">View Tracks</a></h3>
+                    <p>Add additional Tracks to Album:</p>
+                <form method="POST" th:action="@{'/song/' + ${albums.id}}">Song Title:<br>
+                    <input type="text" name="title" style="margin: 10px"><br>Length:<br>
+                    <input type="text" name="length" style="margin: 10px"><br>Track Number:<br>
+                    <input type="text" name="trackNumber" style="margin: 10px">
+                    <input type="submit">
+                </form>
+                </div>
             </ul>
         </div>
 
-            <div style="flex: 20%; margin: 50px"></div>
-
-        <div style="flex: 50%; margin: 50px">
+        <div style="flex: 30%; margin: 50px"></div>
+        <div style="flex: 35%; margin: 50px">
             <h1>Input new albums</h1>
-            <form method="POST" action="/album" style="border: 2px solid black; border-radius: 5px; padding: 20px">Title:<br>
+            <form method="POST" action="/albums" style="border: 2px solid black; border-radius: 5px; padding: 20px">Title:<br>
                 <input type="text" name="title" style="margin: 10px"><br>Artist:<br>
-                <input type="text" name="artist" style="margin: 10px"><br>SongCount:<br>
+                <input type="text" name="artist" style="margin: 10px"><br>TrackCount:<br>
                 <input type="text" name="songCount" style="margin: 10px"><br>Length:<br>
                 <input type="text" name="length" style="margin: 10px"><br>ImageUrl:<br>
                 <input type="text" name="imageUrl" style="margin: 10px"><br>
