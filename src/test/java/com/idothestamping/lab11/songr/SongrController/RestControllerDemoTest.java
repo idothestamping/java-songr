@@ -5,12 +5,12 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class SongrControllerTest {
-    SongrController test;
+public class RestControllerDemoTest {
+    RestControllerDemo test;
 
     @Before
     public void init() {
-        test = new SongrController();
+        test = new RestControllerDemo();
     }
 
     @Test

@@ -9,6 +9,14 @@
    * An Album has a title, an artist, a songCount, a length (in seconds), and an imageUrl that is a link to that album’s art.
    * A user should be able to see information about all the albums on the site.
    * A user should be able to add albums to the site.
+* Related Resources and Integration Testing
+  * Create a Song model.
+  * A Song has a title, a length (in seconds), a trackNumber, and the album on which that song appears.
+  * Ensure that the relationship between Albums and Songs is appropriately set up.
+  * A user should be able to see information about all the songs on the site.
+  * A user should be able to view a page with data about one particular album.
+  * A user should be able to add songs to an album.
+  * A user should be able to see the songs that belong to an album when looking at that album.
    
 ## Setup
 Use the [Spring Initializr](https://start.spring.io/) to create a new application with artifact songr with Web (and optionally Devtools) dependency. Download the zip file and extract the directory it contains. 
@@ -22,3 +30,6 @@ Use the [Spring Initializr](https://start.spring.io/) to create a new applicatio
 * [Album Code](https://github.com/idothestamping/java-songr/blob/master/src/main/java/com/idothestamping/lab11/songr/Album.java)
 * [Album Controller Code](https://github.com/idothestamping/java-songr/blob/master/src/main/java/com/idothestamping/lab11/songr/SongrController/AlbumController.java)
 
+**Related Resources and Integration Testing**
+* [Song Code](https://github.com/idothestamping/java-songr/blob/master/src/main/java/com/idothestamping/lab11/songr/Song.java)
+* [Song Controller Code](https://github.com/idothestamping/java-songr/blob/master/src/main/java/com/idothestamping/lab11/songr/SongrController/SongController.java)

@@ -4,11 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SongrApplication {
+public class ServerStart {
 
 	public static void main(String[] args) {
 
-		SpringApplication.run(SongrApplication.class, args);
+		SpringApplication.run(ServerStart.class, args);
 		System.out.println("http://localhost:8080/album");
 	}
 
